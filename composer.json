@@ -1,0 +1,13 @@
+{
+    "name": "baltpeter/internetmarke-php",
+    "description": "A simple PHP wrapper for the Deutsche Post Internetmarke web service",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamin Altpeter",
+            "email": "hi@bn.al"
+        }
+    ],
+    "require": {
+    }
+}
