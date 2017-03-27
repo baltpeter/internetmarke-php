@@ -8,6 +8,7 @@
             "email": "hi@bn.al"
         }
     ],
-    "require": {
+    "autoload": {
+        "psr-4": {"baltpeter\\Internetmarke\\": "src/baltpeter/Internetmarke"}
     }
 }
