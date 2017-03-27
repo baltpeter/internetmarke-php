@@ -82,6 +82,7 @@ class PartnerInformation {
      * @return array An array of SOAP headers to authenticate the request with the Internetmarke server. Valid for four minutes from `REQUEST_TIMESTAMP`
      */
     public function soapHeaderArray() {
+        date_default_timezone_set('Europe/Berlin'); // The DPAG server requires a date from the German timezone
         return array(
             new \SoapHeader('https://internetmarke.deutschepost.de', 'PARTNER_ID', $this->partnerId),
             new \SoapHeader('https://internetmarke.deutschepost.de', 'REQUEST_TIMESTAMP', date('dmY-His')),
