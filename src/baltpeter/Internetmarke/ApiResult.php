@@ -9,11 +9,10 @@ abstract class ApiResult {
         $object = new $class_name(...array_fill(0, ((new \ReflectionMethod($class_name, '__construct'))->getNumberOfParameters()), null));
 
         foreach($std_object as $property => $value) {
-            // taken from http://stackoverflow.com/a/19533226
-            $snake_property = ltrim(strtolower(preg_replace('/[A-Z]([A-Z](?![a-z]))*/', '_$0', $property)), '_');
+            $snake_property = \Doctrine\Common\Inflector\Inflector::tableize($property);
 
             if(is_object($value)) {
-                $value_class_name = __NAMESPACE__ . '\\' . $property;
+                $value_class_name = __NAMESPACE__ . '\\' . \Doctrine\Common\Inflector\Inflector::classify($property);
                 if(class_exists($value_class_name) && is_subclass_of($value_class_name, get_class())) {
                     $value = $value_class_name::fromStdObject($value);
                 }

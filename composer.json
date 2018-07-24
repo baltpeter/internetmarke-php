@@ -10,5 +10,8 @@
     ],
     "autoload": {
         "psr-4": {"baltpeter\\Internetmarke\\": "src/baltpeter/Internetmarke"}
+    },
+    "require": {
+        "doctrine/inflector": "^1.3"
     }
 }
