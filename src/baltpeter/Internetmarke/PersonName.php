@@ -25,14 +25,14 @@ class PersonName extends ApiResult {
      *
      * @param string $salutation
      * @param string $title
-     * @param string $first_name
-     * @param string $last_name
+     * @param string $firstname
+     * @param string $lastname
      */
-    public function __construct($salutation, $title, $first_name, $last_name) {
-        $this->salutation = $salutation;
-        $this->title = $title;
-        $this->firstname = $first_name;
-        $this->lastname = $last_name;
+    public function __construct($salutation, $title, $firstname, $lastname) {
+        $this->setSalutation($salutation);
+        $this->setTitle($title);
+        $this->setFirstname($firstname);
+        $this->setLastname($lastname);
     }
 
     /**

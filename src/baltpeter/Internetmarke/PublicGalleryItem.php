@@ -29,10 +29,10 @@ class PublicGalleryItem extends ApiResult {
      * @param array $images
      */
     public function __construct($category, $category_description, $category_id, array $images = null) {
-        $this->category = $category;
-        $this->categoryDescription = $category_description;
-        $this->categoryId = $category_id;
-        $this->images = $images;
+        $this->setCategory($category);
+        $this->setCategoryDescription($category_description);
+        $this->setCategoryId($category_id);
+        $this->setImages($images);
     }
 
     /**

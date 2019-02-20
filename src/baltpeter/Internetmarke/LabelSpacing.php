@@ -19,8 +19,8 @@ class LabelSpacing extends ApiResult {
      * @param int $y Spacing between labels in the y direction in millimeters
      */
     public function __construct($x, $y) {
-        $this->x = $x;
-        $this->y = $y;
+        $this->setX($x);
+        $this->setY($y);
     }
 
     /**

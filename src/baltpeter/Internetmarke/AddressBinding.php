@@ -2,6 +2,8 @@
 
 namespace baltpeter\Internetmarke;
 
+use function DeepCopy\deep_copy;
+
 class AddressBinding extends ApiResult {
     /**
      * @var NamedAddress The sender's address
@@ -19,8 +21,8 @@ class AddressBinding extends ApiResult {
      * @param NamedAddress $receiver_address
      */
     public function __construct($sender_address, $receiver_address) {
-        $this->sender = $sender_address;
-        $this->receiver = $receiver_address;
+        $this->setSender($sender_address);
+        $this->setReceiver($receiver_address);
     }
 
     /**
@@ -34,7 +36,7 @@ class AddressBinding extends ApiResult {
      * @param NamedAddress $sender
      */
     public function setSender($sender) {
-        $this->sender = $sender;
+        $this->sender = deep_copy($sender);
     }
 
     /**
@@ -48,6 +50,6 @@ class AddressBinding extends ApiResult {
      * @param NamedAddress $receiver
      */
     public function setReceiver($receiver) {
-        $this->receiver = $receiver;
+        $this->receiver = deep_copy($receiver);
     }
 }

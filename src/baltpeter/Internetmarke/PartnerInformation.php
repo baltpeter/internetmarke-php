@@ -24,9 +24,9 @@ class PartnerInformation {
      * @param string $schlussel_dpwn_meinmarktplatz A secret (and static) key supplied to the partner by DPDHL
      */
     public function __construct($partner_id, $key_phase, $schlussel_dpwn_meinmarktplatz) {
-        $this->partnerId = $partner_id;
-        $this->keyPhase = $key_phase;
-        $this->schlusselDpwnMeinmarktplatz = $schlussel_dpwn_meinmarktplatz;
+        $this->setPartnerId($partner_id);
+        $this->setKeyPhase($key_phase);
+        $this->setSchlusselDpwnMeinmarktplatz($schlussel_dpwn_meinmarktplatz);
     }
 
     /**

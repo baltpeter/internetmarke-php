@@ -2,6 +2,8 @@
 
 namespace baltpeter\Internetmarke;
 
+use function DeepCopy\deep_copy;
+
 class Name extends ApiResult {
     /**
      * @var PersonName First name and last name of a natural person
@@ -21,8 +23,8 @@ class Name extends ApiResult {
      * @param CompanyName $company_name
      */
     public function __construct($person_name, $company_name) {
-        $this->personName = $person_name;
-        $this->companyName = $company_name;
+        $this->setPersonName($person_name);
+        $this->setCompanyName($company_name);
     }
 
     /**
@@ -36,7 +38,7 @@ class Name extends ApiResult {
      * @param PersonName $personName
      */
     public function setPersonName($personName) {
-        $this->personName = $personName;
+        $this->personName = deep_copy($personName);
     }
 
     /**
@@ -50,6 +52,6 @@ class Name extends ApiResult {
      * @param CompanyName $companyName
      */
     public function setCompanyName($companyName) {
-        $this->companyName = $companyName;
+        $this->companyName = deep_copy($companyName);
     }
 }

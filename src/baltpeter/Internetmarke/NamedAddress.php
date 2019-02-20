@@ -2,6 +2,8 @@
 
 namespace baltpeter\Internetmarke;
 
+use function DeepCopy\deep_copy;
+
 class NamedAddress extends ApiResult {
     /**
      * @var Name A person or company name
@@ -19,8 +21,8 @@ class NamedAddress extends ApiResult {
      * @param Address $address
      */
     public function __construct(Name $name, Address $address) {
-        $this->name = $name;
-        $this->address = $address;
+        $this->setName($name);
+        $this->setAddress($address);
     }
 
     /**
@@ -34,7 +36,7 @@ class NamedAddress extends ApiResult {
      * @param Name $name
      */
     public function setName($name) {
-        $this->name = $name;
+        $this->name = deep_copy($name);
     }
 
     /**
@@ -48,6 +50,6 @@ class NamedAddress extends ApiResult {
      * @param Address $address
      */
     public function setAddress($address) {
-        $this->address = $address;
+        $this->address = deep_copy($address);
     }
 }

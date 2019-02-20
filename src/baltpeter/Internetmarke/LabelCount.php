@@ -19,8 +19,8 @@ class LabelCount extends ApiResult {
      * @param int $label_y Number of label items in the y direction
      */
     public function __construct($label_x, $label_y) {
-        $this->labelX = $label_x;
-        $this->labelY = $label_y;
+        $this->setLabelX($label_x);
+        $this->setLabelY($label_y);
     }
 
     /**

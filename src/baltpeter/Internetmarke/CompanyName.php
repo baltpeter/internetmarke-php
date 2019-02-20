@@ -2,6 +2,8 @@
 
 namespace baltpeter\Internetmarke;
 
+use function DeepCopy\deep_copy;
+
 class CompanyName {
     /**
      * @var string Company name
@@ -19,8 +21,8 @@ class CompanyName {
      * @param PersonName $person_name
      */
     public function __construct($company, $person_name) {
-        $this->company = $company;
-        $this->personName = $person_name;
+        $this->setCompany($company);
+        $this->setPersonName($person_name);
     }
 
     /**
@@ -48,6 +50,6 @@ class CompanyName {
      * @param PersonName $personName
      */
     public function setPersonName($personName) {
-        $this->personName = $personName;
+        $this->personName = deep_copy($personName);
     }
 }

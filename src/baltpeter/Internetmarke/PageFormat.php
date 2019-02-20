@@ -2,6 +2,8 @@
 
 namespace baltpeter\Internetmarke;
 
+use function DeepCopy\deep_copy;
+
 class PageFormat extends ApiResult {
     /**
      * @var int Page format ID
@@ -44,13 +46,13 @@ class PageFormat extends ApiResult {
      * @param PageLayout $page_layout
      */
     public function __construct($id, $is_address_possible, $is_image_possible, $name, $description, $page_type, $page_layout) {
-        $this->id = $id;
-        $this->isAddressPossible = $is_address_possible;
-        $this->isImagePossible = $is_image_possible;
-        $this->name = $name;
-        $this->description = $description;
-        $this->pageType = $page_type;
-        $this->pageLayout = $page_layout;
+        $this->setId($id);
+        $this->setIsAddressPossible($is_address_possible);
+        $this->setIsImagePossible($is_image_possible);
+        $this->setName($name);
+        $this->setDescription($description);
+        $this->setPageType($page_type);
+        $this->setPageLayout($page_layout);
     }
 
     /**
@@ -148,6 +150,6 @@ class PageFormat extends ApiResult {
      * @param PageLayout $pageLayout
      */
     public function setPageLayout($pageLayout) {
-        $this->pageLayout = $pageLayout;
+        $this->pageLayout = deep_copy($pageLayout);
     }
 }

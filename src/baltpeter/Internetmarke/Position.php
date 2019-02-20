@@ -24,9 +24,9 @@ class Position {
      * @param int $page
      */
     public function __construct($label_x, $label_y, $page) {
-        $this->labelX = $label_x;
-        $this->labelY = $label_y;
-        $this->page = $page;
+        $this->setLabelX($label_x);
+        $this->setLabelY($label_y);
+        $this->setPage($page);
     }
 
     /**

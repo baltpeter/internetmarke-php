@@ -2,6 +2,8 @@
 
 namespace baltpeter\Internetmarke;
 
+use function DeepCopy\deep_copy;
+
 class OrderItem extends ApiResult {
     /**
      * @var int Deutsche Post’s internal product ID for the selected product
@@ -34,11 +36,11 @@ class OrderItem extends ApiResult {
      * @param string $voucher_layout
      */
     public function __construct($product_code, $image_id, $address_binding, $position, $voucher_layout) {
-        $this->productCode = $product_code;
-        $this->imageId = $image_id;
-        $this->address = $address_binding;
-        $this->position = $position;
-        $this->voucherLayout = $voucher_layout;
+        $this->setProductCode($product_code);
+        $this->setImageId($image_id);
+        $this->setAddress($address_binding);
+        $this->setPosition($position);
+        $this->setVoucherLayout($voucher_layout);
     }
 
     /**
@@ -80,7 +82,7 @@ class OrderItem extends ApiResult {
      * @param AddressBinding $address
      */
     public function setAddress($address) {
-        $this->address = $address;
+        $this->address = deep_copy($address);
     }
 
     /**
@@ -94,7 +96,7 @@ class OrderItem extends ApiResult {
      * @param Position $position
      */
     public function setPosition($position) {
-        $this->position = $position;
+        $this->position = deep_copy($position);
     }
 
     /**

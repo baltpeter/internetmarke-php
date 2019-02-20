@@ -19,8 +19,8 @@ class Size extends ApiResult {
      * @param int $y Height in millimeters
      */
     public function __construct($x, $y) {
-        $this->x = $x;
-        $this->y = $y;
+        $this->setX($x);
+        $this->setY($y);
     }
 
     /**

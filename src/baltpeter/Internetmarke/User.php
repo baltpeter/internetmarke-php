@@ -29,10 +29,10 @@ class User extends ApiResult {
      * @param string $info_message Optional information text
      */
     public function __construct($user_token, $wallet_balance, $show_terms_and_conditions, $info_message) {
-        $this->userToken = $user_token;
-        $this->walletBalance = $wallet_balance;
-        $this->showTermsAndConditions = $show_terms_and_conditions;
-        $this->info_message = $info_message;
+        $this->setUserToken($user_token);
+        $this->setWalletBalance($wallet_balance);
+        $this->setShowTermsAndConditions($show_terms_and_conditions);
+        $this->setInfoMessage($info_message);
     }
 
     /**

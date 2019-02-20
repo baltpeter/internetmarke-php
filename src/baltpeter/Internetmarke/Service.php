@@ -14,7 +14,7 @@ class Service extends \SoapClient {
      */
     public function __construct($partner_information, $options = array(), $wsdl = null) {
         $this->partner_information = $partner_information;
-        $options = array_merge(array('features' => 1), $options);
+        $options = array_merge(array('features' => SOAP_SINGLE_ELEMENT_ARRAYS), $options);
         if($wsdl === null) {
             $wsdl = 'https://internetmarke.deutschepost.de/OneClickForAppV3?wsdl';
         }

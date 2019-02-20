@@ -29,10 +29,10 @@ class Margin extends ApiResult {
      * @param int $right Inner right margin size of the page format in millimeters
      */
     public function __construct($top, $bottom, $left, $right) {
-        $this->top = $top;
-        $this->bottom = $bottom;
-        $this->left = $left;
-        $this->right = $right;
+        $this->setTop($top);
+        $this->setBottom($bottom);
+        $this->setLeft($left);
+        $this->setRight($right);
     }
 
     /**

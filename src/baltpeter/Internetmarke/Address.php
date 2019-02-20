@@ -39,12 +39,12 @@ class Address extends ApiResult {
      * @param string $country
      */
     public function __construct($additional, $street, $house_no, $zip, $city, $country) {
-        $this->additional = $additional;
-        $this->street = $street;
-        $this->houseNo = $house_no;
-        $this->zip = $zip;
-        $this->city = $city;
-        $this->country = $country;
+        $this->setAdditional($additional);
+        $this->setStreet($street);
+        $this->setHouseNo($house_no);
+        $this->setZip($zip);
+        $this->setCity($city);
+        $this->setCountry($country);
     }
 
     /**
