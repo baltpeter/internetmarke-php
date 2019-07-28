@@ -6,7 +6,7 @@ namespace baltpeter\Internetmarke;
  * Helper class to create form
  * for loading the portokasse
  */
-class LoadPortokasse
+class PortokasseCharge
 {
   /**
    * @var string Generated during authentification in service class
@@ -70,6 +70,10 @@ class LoadPortokasse
   public function getUserToken()
   {
     return $this->user_token;
+  }
+
+  public function getRequestTimestamp() {
+    return $this->time;
   }
 
   /**
