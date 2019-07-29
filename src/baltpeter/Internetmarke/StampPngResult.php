@@ -25,6 +25,7 @@ class StampPngResult extends ApiResult {
    * @param string $link           url to zipfile
    * @param integer $walletBallance portokasse balance in eurocent
    * @param stdClass $shoppingCart   with attributes `shopOrderId` and `voucherList`
+   * @param string url to posting receipt of order
    */
   public function __construct($link, $walletBallance, $shoppingCart, $manifestLink = null) {
       $this->link           = $link;
@@ -66,6 +67,7 @@ class StampPngResult extends ApiResult {
         file_put_contents($path . $filename, $data);
         $files[]  = $filename;
       }
+
       unlink($tempFile);
       return $files;
   }
