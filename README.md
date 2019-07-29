@@ -4,17 +4,17 @@
 
 ![Ordering a stamp using internetmarke-php](https://cdn.baltpeter.io/img/internetmarke-php-hero.svg)
 
-This project’s main purpose is to be able to order Deutsche Post stamps directly from your own applications. The payment is handled via the Portokasse, a prepaid wallet service also by Deutsche Post.
+This project’s main purpose is to be able to order Deutsche Post stamps directly from your own applications. The payment is handled via the Portokasse, a prepaid wallet service also by Deutsche Post.  
 
 The web service by Deutsche Post is a custom SOAP API (see the WSDL here: https://internetmarke.deutschepost.de/OneClickForAppV3?wsdl). This project aims to abstract the SOAP nature away and provide a PHP API, while still adhering to the structure defined by DPAG.
 Do note that this is only a very thin wrapper around the SOAP API and the user still has to follow DPAG’s [specification](https://www.deutschepost.de/de/i/internetmarke-porto-drucken/downloads.html).
 
 ## Requirements
 
-To access the web service, you will need to register as a partner with DPAG. This can either be done via their [website](https://www.deutschepost.de/de/i/internetmarke-porto-drucken/geschaeftskunden.html) (German only) or by contacting pcf-1click@deutschepost.de.
+To access the web service, you will need to register as a partner with DPAG. This can either be done via their [website](https://www.deutschepost.de/de/i/internetmarke-porto-drucken/geschaeftskunden.html) (German only) or by contacting pcf-1click@deutschepost.de.  
 They will send you the documentation for the web service and create your personal credentials (consisting of: your partner ID, a secret key called `SCHLUESSEL_DPWN_MARKTPLATZ`, and a key phase which is usually `1`).
 
-In addition, you will need to have an account for the [Portokasse service](https://portokasse.deutschepost.de/portokasse/#!/). This is a prepaid wallet from which your purchase totals will be deducted.
+In addition, you will need to have an account for the [Portokasse service](https://portokasse.deutschepost.de/portokasse/#!/). This is a prepaid wallet from which your purchase totals will be deducted.  
 After registering, you can access the service with your username (email address) and password.
 
 ## Installation

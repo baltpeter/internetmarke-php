@@ -15,6 +15,10 @@ class StampPngResult extends ApiResult {
    * @var stdClass with attributes `shopOrderId` and `voucherList`
    */
   public $shoppingCart;
+  /**
+   * @var string url to manifestLink
+   */
+  public $manifestLink;
 
   /**
    *
@@ -22,16 +26,19 @@ class StampPngResult extends ApiResult {
    * @param integer $walletBallance portokasse balance in eurocent
    * @param stdClass $shoppingCart   with attributes `shopOrderId` and `voucherList`
    */
-  public function __construct($link, $walletBallance, $shoppingCart) {
+  public function __construct($link, $walletBallance, $shoppingCart, $manifestLink = null) {
       $this->link           = $link;
       $this->walletBallance = $walletBallance;
       $this->shoppingCart   = $shoppingCart;
+      $this->manifestLink   = $manifestLink;
   }
 
   /**
    * Store zip and png files in folder of $path
    * @param string $path location where png should be extracted to
-   * @return array filenames of png's that were extracted
+   * @return array on success: filenames of png's that were extracted
+   *               on failure: if copy of zip file failed false,
+   *                           if zip coulnd not be opened the error code
    */
   public function unzipPNG($path)
   {
@@ -43,10 +50,14 @@ class StampPngResult extends ApiResult {
       }
 
       $tempFile = $path . 'zip' . date('Y-m-d_H:i:s'). '_' . uniqid();
-      copy($this->link,$tempFile);
 
-      $zip = new \ZipArchive();
-      $zip->open($tempFile);
+      if(!copy($this->link,$tempFile)) return false;
+
+      $zip        = new \ZipArchive();
+      $zip_result = $zip->open($tempFile);
+
+      if($zip_result !== true) return $zip_result;
+
       $file_count = $zip->count();
       $files = [];
       for ($i=0; $i < $file_count; $i++) {
@@ -55,7 +66,7 @@ class StampPngResult extends ApiResult {
         file_put_contents($path . $filename, $data);
         $files[]  = $filename;
       }
-
+      unlink($tempFile);
       return $files;
   }
 
