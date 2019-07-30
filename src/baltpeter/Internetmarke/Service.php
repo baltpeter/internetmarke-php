@@ -135,7 +135,7 @@ class Service extends \SoapClient {
                                             $ppl_id = null, $create_manifest = null, $create_shipping_list = null) {
         $result = $this->__soapCall('checkoutShoppingCartPDF', array('CheckoutShoppingCartPDFRequest' => array(
             'userToken' => $user_token, 'shopOrderId' => $shop_order_id, 'pageFormatId' => $page_format_id, 'ppl' => $ppl_id,
-            'positions' => $positions, 'total' => $total, 'createManifest' => $create_manifest, 'createShippingList' => $create_shipping_list
+            'positions' => array_map("DeepCopy\deep_copy", $positions), 'total' => $total, 'createManifest' => $create_manifest, 'createShippingList' => $create_shipping_list
         )));
         return $result;
     }
@@ -157,7 +157,7 @@ class Service extends \SoapClient {
     public function checkoutShoppingCartPng($user_token, $positions, $total, $shop_order_id = null,
                                             $ppl_id = null, $create_manifest = null, $create_shipping_list = null) {
         $result = $this->__soapCall('checkoutShoppingCartPNG', array('CheckoutShoppingCartPNGRequest' => array(
-            'userToken' => $user_token, 'shopOrderId' => $shop_order_id, 'ppl' => $ppl_id, 'positions' => $positions,
+            'userToken' => $user_token, 'shopOrderId' => $shop_order_id, 'ppl' => $ppl_id, 'positions' => array_map("DeepCopy\deep_copy", $positions),
             'total' => $total, 'createManifest' => $create_manifest, 'createShippingList' => $create_shipping_list
         )));
         return StampPngResult::fromStdObject($result);
