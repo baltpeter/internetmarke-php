@@ -160,7 +160,7 @@ class Service extends \SoapClient {
             'userToken' => $user_token, 'shopOrderId' => $shop_order_id, 'ppl' => $ppl_id, 'positions' => $positions,
             'total' => $total, 'createManifest' => $create_manifest, 'createShippingList' => $create_shipping_list
         )));
-        return $result;
+        return StampPngResult::fromStdObject($result);
     }
 
     /**
