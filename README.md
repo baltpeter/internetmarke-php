@@ -11,7 +11,7 @@ Do note that this is only a very thin wrapper around the SOAP API and the user s
 
 ## Requirements
 
-To access the web service, you will need to register as a partner with DPAG. This can either be done via their [website](https://www.deutschepost.de/de/i/internetmarke-porto-drucken/geschaeftskunden.html) (German only) or by contacting pcf-1click@deutschepost.de.  
+To access the web service, you will need to register as a partner with DPAG. This can either be done via their [website](https://www.deutschepost.de/de/i/internetmarke-porto-drucken/geschaeftskunden.html) (German only) or by contacting pcf-1click@deutschepost.de. They ask you to fill out following [form](https://www.deutschepost.de/content/dam/dpag/images/i_i/Internetmarke/partnerwerden/dp-internetmarke-anmeldebogen-api-anbindung.pdf). So keep in mind to fill it out first. (German only).  
 They will send you the documentation for the web service and create your personal credentials (consisting of: your partner ID, a secret key called `SCHLUESSEL_DPWN_MARKTPLATZ`, and a key phase which is usually `1`).
 
 In addition, you will need to have an account for the [Portokasse service](https://portokasse.deutschepost.de/portokasse/#!/). This is a prepaid wallet from which your purchase totals will be deducted.  
