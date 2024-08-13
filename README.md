@@ -2,7 +2,7 @@
 
 > Simple PHP wrapper for the 1C4A (“OneClickForApplikation”) web service for the Internetmarke provided by Deutsche Post (DPAG).
 
-![Ordering a stamp using internetmarke-php](https://cdn.baltpeter.io/img/internetmarke-php-hero.svg)
+![Ordering a stamp using internetmarke-php](https://static.bn.al/img/internetmarke-php-hero.svg)
 
 This project’s main purpose is to be able to order Deutsche Post stamps directly from your own applications. The payment is handled via the Portokasse, a prepaid wallet service also by Deutsche Post.  
 
@@ -82,7 +82,7 @@ Note how we wrapped the `$order_item` in an array. If you want to order multiple
 
 The stamp in the linked PDF will look something like this:
 
-![The generated stamp](https://cdn.baltpeter.io/img/internetmarke-php-stamp-example.png)
+![The generated stamp](https://static.bn.al/img/internetmarke-php-stamp-example.png)
 
 Again, please refer to the [wiki](https://github.com/baltpeter/internetmarke-php/wiki/Examples) for more examples.
 
