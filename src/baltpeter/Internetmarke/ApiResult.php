@@ -16,7 +16,7 @@ abstract class ApiResult {
                 if(is_object($value)) {
                     // taken from https://github.com/doctrine/inflector by the Doctrine Project, Inflector::classify()
                     $value_class_name = __NAMESPACE__ . '\\' . str_replace([' ', '_', '-'], '', ucwords($property, ' _-'));
-                    if(class_exists($value_class_name) && is_subclass_of($value_class_name, get_class())) {
+                    if(class_exists($value_class_name) && is_subclass_of($value_class_name, __CLASS__)) {
                         $value = $value_class_name::fromStdObject($value);
                     }
                 }
