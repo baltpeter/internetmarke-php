@@ -2,6 +2,9 @@
 
 > Simple PHP wrapper for the 1C4A (“OneClickForApplikation”) web service for the Internetmarke provided by Deutsche Post (DPAG).
 
+> [!CAUTION]
+> Deutsche Post will [sunset](https://developer.dhl.com/api-reference/deutsche-post-internetmarke-post-parcel-germany?lang=en#additional-information-section/deprecation-schedule) the SOAP API that this library uses on December 31, 2025. Afterwards, this library will stop working. It won't be maintained anymore.
+
 ![Ordering a stamp using internetmarke-php](https://static.bn.al/img/internetmarke-php-hero.svg)
 
 This project’s main purpose is to be able to order Deutsche Post stamps directly from your own applications. The payment is handled via the Portokasse, a prepaid wallet service also by Deutsche Post.  
